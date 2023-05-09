@@ -1,15 +1,22 @@
-
 package Vistas;
 
+import Inscripciones.Alumno;
+import Inscripciones.Materia;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ViewColegio extends javax.swing.JFrame {
 
-  
+
+    public static Map<Integer,Alumno> estudiantes = new HashMap();
+    public static Map<Integer,Materia> materias = new HashMap();
+    
+    
+    
     public ViewColegio() {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,7 +40,8 @@ public class ViewColegio extends javax.swing.JFrame {
         jMSalir = new javax.swing.JMenu();
         jmSalirDelRegistro = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(450, 140, 784, 782));
 
         jEscritorio.setAutoscrolls(true);
         jEscritorio.setPreferredSize(new java.awt.Dimension(800, 800));
@@ -62,13 +70,13 @@ public class ViewColegio extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Alex Gustavo Astudillo Duran");
 
-        jLabel8.setFont(new java.awt.Font("Castellar", 1, 60)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Castellar", 0, 80)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("COLEGIO");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inscripciones.png"))); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Castellar", 1, 60)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Castellar", 0, 80)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("REGISTROS");
 
@@ -106,39 +114,38 @@ public class ViewColegio extends javax.swing.JFrame {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(315, 315, 315))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEscritorioLayout.createSequentialGroup()
-                        .addGap(0, 182, Short.MAX_VALUE)
-                        .addGroup(jEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEscritorioLayout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEscritorioLayout.createSequentialGroup()
-                                .addGroup(jEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jEscritorioLayout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(80, 80, 80))
-                                    .addGroup(jEscritorioLayout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(109, 109, 109)))
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60))))))
-            .addGroup(jEscritorioLayout.createSequentialGroup()
-                .addGap(253, 253, 253)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEscritorioLayout.createSequentialGroup()
+                        .addGroup(jEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jEscritorioLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18))
+                            .addGroup(jEscritorioLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(49, 49, 49)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEscritorioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(241, 241, 241))
         );
         jEscritorioLayout.setVerticalGroup(
             jEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jEscritorioLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jEscritorioLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(391, 391, 391))
+                    .addGroup(jEscritorioLayout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(65, 65, 65)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114)))
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(jEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -161,6 +168,11 @@ public class ViewColegio extends javax.swing.JFrame {
         });
 
         jmFormularioMaterias.setText("Formulario Materias");
+        jmFormularioMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmFormularioMateriasActionPerformed(evt);
+            }
+        });
         jMRegistros.add(jmFormularioMaterias);
 
         jmFormularioAlumnos.setText("Formulario Alumnos");
@@ -214,7 +226,12 @@ public class ViewColegio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmFormularioAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormularioAlumnosActionPerformed
-        // TODO add your handling code here:
+        jEscritorio.removeAll();
+        jEscritorio.repaint();
+        ViewFormularioAlumnos alumnos = new ViewFormularioAlumnos();
+        jEscritorio.add(alumnos);
+        alumnos.setVisible(true);
+     
     }//GEN-LAST:event_jmFormularioAlumnosActionPerformed
 
     private void jMRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMRegistrosActionPerformed
@@ -226,8 +243,16 @@ public class ViewColegio extends javax.swing.JFrame {
     }//GEN-LAST:event_jmFormularioInscripcionesActionPerformed
 
     private void jmSalirDelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirDelRegistroActionPerformed
-      dispose();
+        dispose();
     }//GEN-LAST:event_jmSalirDelRegistroActionPerformed
+
+    private void jmFormularioMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormularioMateriasActionPerformed
+       jEscritorio.removeAll();
+       jEscritorio.repaint();
+       ViewFormularioMaterias matt = new ViewFormularioMaterias();
+       jEscritorio.add(matt);
+       matt.setVisible(true);
+    }//GEN-LAST:event_jmFormularioMateriasActionPerformed
 
     /**
      * @param args the command line arguments

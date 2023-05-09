@@ -5,6 +5,10 @@
  */
 package Vistas;
 
+import Inscripciones.Materia;
+import static Vistas.ViewColegio.materias;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author La Maquina
@@ -12,7 +16,7 @@ package Vistas;
 public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ViewFormularioMaterias
+     * Creates new form ViewFormularioAlumnos
      */
     public ViewFormularioMaterias() {
         initComponents();
@@ -27,21 +31,238 @@ public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel1 = new javax.swing.JLabel();
+        jtCodigo = new javax.swing.JTextField();
+        jtNombre = new javax.swing.JTextField();
+        jrbPrimero = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jrbTercero = new javax.swing.JRadioButton();
+        jrbSegundo = new javax.swing.JRadioButton();
+        jbRegistrar = new javax.swing.JButton();
+        jbNuevo = new javax.swing.JButton();
+        jbSalir = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(737, 570));
+        setRequestFocusEnabled(false);
+
+        jLabel1.setFont(new java.awt.Font("Castellar", 0, 30)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Formulario de Materias");
+
+        jtCodigo.setFont(new java.awt.Font("Castellar", 0, 20)); // NOI18N
+        jtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtCodigo.setText("CODIGO: ");
+        jtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtCodigoActionPerformed(evt);
+            }
+        });
+
+        jtNombre.setFont(new java.awt.Font("Castellar", 0, 20)); // NOI18N
+        jtNombre.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtNombre.setText("NOMBRE:");
+        jtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNombreActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jrbPrimero);
+        jrbPrimero.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jrbPrimero.setText("1° PRIMERO ");
+        jrbPrimero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbPrimeroActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Castellar", 1, 20)); // NOI18N
+        jLabel2.setText("año");
+        jLabel2.setPreferredSize(new java.awt.Dimension(70, 40));
+
+        buttonGroup1.add(jrbTercero);
+        jrbTercero.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jrbTercero.setText("3° TERCERO");
+        jrbTercero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbTerceroActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jrbSegundo);
+        jrbSegundo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jrbSegundo.setText("2° SEGUNDO");
+        jrbSegundo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbSegundoActionPerformed(evt);
+            }
+        });
+
+        jbRegistrar.setFont(new java.awt.Font("Castellar", 1, 18)); // NOI18N
+        jbRegistrar.setText("REGISTRAR");
+        jbRegistrar.setEnabled(false);
+        jbRegistrar.setPreferredSize(new java.awt.Dimension(100, 32));
+        jbRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRegistrarActionPerformed(evt);
+            }
+        });
+
+        jbNuevo.setFont(new java.awt.Font("Castellar", 1, 17)); // NOI18N
+        jbNuevo.setText("NUEVO");
+        jbNuevo.setPreferredSize(new java.awt.Dimension(100, 40));
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNuevoActionPerformed(evt);
+            }
+        });
+
+        jbSalir.setFont(new java.awt.Font("Castellar", 1, 17)); // NOI18N
+        jbSalir.setText("SALIR");
+        jbSalir.setPreferredSize(new java.awt.Dimension(100, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jbNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jrbPrimero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jrbSegundo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbTercero)
+                        .addGap(34, 34, 34))
+                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(125, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(231, 231, 231))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jrbPrimero)
+                    .addComponent(jrbTercero)
+                    .addComponent(jrbSegundo))
+                .addGap(97, 97, 97)
+                .addComponent(jbRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCodigoActionPerformed
+    }//GEN-LAST:event_jtCodigoActionPerformed
+
+    private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNombreActionPerformed
+
+    private void jrbTerceroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbTerceroActionPerformed
+        if (jrbTercero.isSelected() == true) {
+            jbRegistrar.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
+        }
+    }//GEN-LAST:event_jrbTerceroActionPerformed
+
+    private void jbRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegistrarActionPerformed
+
+        Integer idMateria = Integer.parseInt(jtCodigo.getText());
+        String nombre = jtNombre.getText();
+        int anio = 0;
+        if (jrbPrimero.isSelected() == true) {
+            anio = 1;
+            jbRegistrar.setEnabled(true);
+        } else if (jrbSegundo.isSelected() == true) {
+            anio = 2;
+            jbRegistrar.setEnabled(true);
+        } else if (jrbTercero.isSelected() == true) {
+            anio = 3;
+            jbRegistrar.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
+        }
+        Materia materia = new Materia(idMateria, nombre, anio);
+
+        if (!materias.containsKey(materia.getIdMateria())) {
+            ViewColegio.materias.put(idMateria, materia);
+            JOptionPane.showMessageDialog(this, "Materia Agregada");
+            jtCodigo.setText("");
+            jtNombre.setText("");
+            jrbPrimero.setSelected(false);
+            jrbSegundo.setSelected(false);
+            jrbTercero.setSelected(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "El Alumno ya se encuentra Registrado");
+
+        }
+
+
+    }//GEN-LAST:event_jbRegistrarActionPerformed
+
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbNuevoActionPerformed
+
+    private void jrbPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbPrimeroActionPerformed
+        if (jrbPrimero.isSelected() == true) {
+            jbRegistrar.setEnabled(true);
+        }else {
+            JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
+        }
+    }//GEN-LAST:event_jrbPrimeroActionPerformed
+
+    private void jrbSegundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbSegundoActionPerformed
+        if (jrbSegundo.isSelected() == true) {
+            jbRegistrar.setEnabled(true);
+        }else {
+            JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
+        }
+    }//GEN-LAST:event_jrbSegundoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jbNuevo;
+    private javax.swing.JButton jbRegistrar;
+    private javax.swing.JButton jbSalir;
+    private javax.swing.JRadioButton jrbPrimero;
+    private javax.swing.JRadioButton jrbSegundo;
+    private javax.swing.JRadioButton jrbTercero;
+    private javax.swing.JTextField jtCodigo;
+    private javax.swing.JTextField jtNombre;
     // End of variables declaration//GEN-END:variables
 }
