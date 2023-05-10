@@ -182,10 +182,11 @@ public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCodigoActionPerformed
+
     }//GEN-LAST:event_jtCodigoActionPerformed
 
     private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jtNombreActionPerformed
 
     private void jrbTerceroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbTerceroActionPerformed
@@ -203,32 +204,34 @@ public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
         int anio = 0;
         if (jrbPrimero.isSelected() == true) {
             anio = 1;
-            jbRegistrar.setEnabled(true);
-        } else if (jrbSegundo.isSelected() == true) {
+        }else if (jrbSegundo.isSelected() == true) {
             anio = 2;
-            jbRegistrar.setEnabled(true);
-        } else if (jrbTercero.isSelected() == true) {
+        }else if (jrbTercero.isSelected() == true) {
             anio = 3;
-            jbRegistrar.setEnabled(true);
-        } else {
+        }else {
             JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
         }
         Materia materia = new Materia(idMateria, nombre, anio);
 
         if (!materias.containsKey(materia.getIdMateria())) {
-            ViewColegio.materias.put(idMateria, materia);
-            JOptionPane.showMessageDialog(this, "Materia Agregada");
-            jtCodigo.setText("");
-            jtNombre.setText("");
-            jrbPrimero.setSelected(false);
-            jrbSegundo.setSelected(false);
-            jrbTercero.setSelected(false);
+            if (materias.containsValue(materia.getNombre())) {
+                if (!materias.containsValue(materia.getAnio())) {
+                    ViewColegio.materias.put(idMateria, materia);
+                    JOptionPane.showMessageDialog(this, "Materia Agregada");
+                    jtCodigo.setText("");
+                    jtNombre.setText("");
+                    jrbPrimero.setSelected(false);
+                    jrbSegundo.setSelected(false);
+                    jrbTercero.setSelected(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "La materia ya Existe");
+                }
+            } else {
+                ViewColegio.materias.put(idMateria, materia);
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "El Alumno ya se encuentra Registrado");
-
+            JOptionPane.showMessageDialog(this, "La materia ya Existe");
         }
-
-
     }//GEN-LAST:event_jbRegistrarActionPerformed
 
     private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
@@ -238,7 +241,7 @@ public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
     private void jrbPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbPrimeroActionPerformed
         if (jrbPrimero.isSelected() == true) {
             jbRegistrar.setEnabled(true);
-        }else {
+        } else {
             JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
         }
     }//GEN-LAST:event_jrbPrimeroActionPerformed
@@ -246,7 +249,7 @@ public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
     private void jrbSegundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbSegundoActionPerformed
         if (jrbSegundo.isSelected() == true) {
             jbRegistrar.setEnabled(true);
-        }else {
+        } else {
             JOptionPane.showMessageDialog(this, "Seleccion el Año por favor");
         }
     }//GEN-LAST:event_jrbSegundoActionPerformed
