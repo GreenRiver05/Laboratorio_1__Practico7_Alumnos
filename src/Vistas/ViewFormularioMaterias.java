@@ -128,6 +128,8 @@ public class ViewFormularioMaterias extends javax.swing.JInternalFrame {
         jbSalir.setFont(new java.awt.Font("Castellar", 1, 17)); // NOI18N
         jbSalir.setText("SALIR");
         jbSalir.setPreferredSize(new java.awt.Dimension(100, 40));
+        jbSalir.setRolloverEnabled(true);
+        jbSalir.setVerifyInputWhenFocusTarget(false);
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSalirActionPerformed(evt);

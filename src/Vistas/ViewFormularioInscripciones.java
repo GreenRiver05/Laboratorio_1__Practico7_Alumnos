@@ -2,7 +2,9 @@
 package Vistas;
 
 import Inscripciones.Alumno;
+import Inscripciones.Materia;
 import static Vistas.ViewColegio.estudiantes;
+import static Vistas.ViewColegio.materias;
 import java.util.Map;
 
 
@@ -20,10 +22,22 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
         }
 
     }
+     public void llenarComboBox2() {
+
+        for (Map.Entry<Integer, Materia> matt : materias.entrySet()) {
+            String valor = matt.getValue().getNombre();
+            valor += " " + matt.getValue().getAnio()+ " de " + matt.getKey()+" año ";
+
+            jComboBox2.addItem(valor);
+
+        }
+
+    }
 
     public ViewFormularioInscripciones() {
         initComponents();
         llenarComboBox();
+        llenarComboBox2();
     }
 
     @SuppressWarnings("unchecked")
@@ -68,6 +82,11 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
         jButton3.setFont(new java.awt.Font("Castellar", 1, 17)); // NOI18N
         jButton3.setText("SALIR");
         jButton3.setPreferredSize(new java.awt.Dimension(100, 40));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalir3ActionPerformed(evt);
+            }
+        });
 
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,6 +188,11 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jSalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalir3ActionPerformed
+      
+       dispose();
+    }//GEN-LAST:event_jSalir3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
