@@ -5,6 +5,10 @@
  */
 package Vistas;
 
+import Inscripciones.Alumno;
+import static Vistas.ViewColegio.estudiantes;
+import java.util.Map;
+
 /**
  *
  * @author La Maquina
@@ -14,8 +18,23 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
     /**
      * Creates new form ViewFormularioAlumnos
      */
+    
+    public void llenarComboBox(){
+    
+    for (Map.Entry<Integer, Alumno> a : estudiantes.entrySet()) {
+     String valor=a.getValue().getNombre();
+    valor+=" "+a.getValue().getApellido()+" - "+a.getKey();
+
+    jComboBox1.addItem(valor);
+     
+     }
+    
+    
+    
+    }
     public ViewFormularioInscripciones() {
         initComponents();
+        llenarComboBox();
     }
 
     /**
@@ -66,9 +85,12 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
         jButton3.setText("SALIR");
         jButton3.setPreferredSize(new java.awt.Dimension(100, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -155,8 +177,17 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
+        // TODO 5add your handling code here:
+        
+     
+    
+   
+    
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

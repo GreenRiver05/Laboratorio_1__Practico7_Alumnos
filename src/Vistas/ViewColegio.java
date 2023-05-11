@@ -239,7 +239,11 @@ public class ViewColegio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMRegistrosActionPerformed
 
     private void jmFormularioInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormularioInscripcionesActionPerformed
-        // TODO add your handling code here:
+       jEscritorio.removeAll();
+       jEscritorio.repaint();
+       ViewFormularioInscripciones inscripcion = new ViewFormularioInscripciones();
+       jEscritorio.add(inscripcion);
+       inscripcion.setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_jmFormularioInscripcionesActionPerformed
 
     private void jmSalirDelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirDelRegistroActionPerformed
