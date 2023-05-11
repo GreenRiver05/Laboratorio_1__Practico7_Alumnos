@@ -23,6 +23,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
         jbSalir = new javax.swing.JButton();
         jbEditar = new javax.swing.JButton();
         jlEstado = new javax.swing.JLabel();
+        jlNuevoLegajo = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(737, 570));
         setRequestFocusEnabled(false);
@@ -127,6 +128,8 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
         jlEstado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlEstado.setText("Alumno Nuevo");
 
+        jlNuevoLegajo.setForeground(new java.awt.Color(153, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,12 +161,18 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
                         .addGap(219, 219, 219)
                         .addComponent(jlEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(101, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jlNuevoLegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
+                .addComponent(jlNuevoLegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtLegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -203,7 +212,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
             jbRegistrar.setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(this, "El Alumno ya se encuentra Registrado");
-            
+            jlNuevoLegajo.setText("Legajo existente, ingrese otro");
         }
         
 
@@ -243,11 +252,13 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
             jtNombre.setEnabled(true);
             jtLegajo.setEnabled(false);
             jbEditar.setEnabled(true);
-            
+            jlNuevoLegajo.setText("");
         } catch (NumberFormatException ex) {
 //          ImageIcon iconoNumeroTelefonico = new ImageIcon(getClass().getResource("/Imagenes/gatitoVampiro.png"));
 //          JOptionPane.showMessageDialog(this, "Por favor ingrese un Valor Numerico para el Telefono", "DATO INCORRECTO", WIDTH, iconoNumeroTelefonico);
             JOptionPane.showMessageDialog(this, "Por favor ingrese un Valor Numerico para el Legajo");
+            jtLegajo.setText("");
+            
         }
 
     }//GEN-LAST:event_jtLegajoActionPerformed
@@ -303,6 +314,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbRegistrar;
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel jlEstado;
+    private javax.swing.JLabel jlNuevoLegajo;
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtLegajo;
     private javax.swing.JTextField jtNombre;
