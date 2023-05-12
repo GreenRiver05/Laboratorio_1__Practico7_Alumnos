@@ -47,18 +47,21 @@ public class Alumno {
     public boolean agregarMateria(Materia m) {
         boolean agregado = false;
         if (!materias.containsKey(m.getIdMateria())) {
-            if (materias.containsValue(m.getNombre())) {
-                if (!materias.containsValue(m.getAnio())) {
-                    materias.put(m.getIdMateria(), m);
-                    agregado = true;
-                }
-            } else {
-                materias.put(m.getIdMateria(), m);
-                agregado = true;
-            }
-
+            materias.put(m.getIdMateria(), m);
+            agregado = true;
+        } else {
+            materias.put(m.getIdMateria(), m);
+            agregado = true;
         }
         return agregado;
+    }
+
+    public Map<Integer, Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(Map<Integer, Materia> materias) {
+        this.materias = materias;
     }
 
     public int cantidadMaterias() {

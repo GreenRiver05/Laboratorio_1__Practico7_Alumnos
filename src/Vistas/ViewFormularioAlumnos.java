@@ -5,11 +5,11 @@ import static Vistas.ViewColegio.estudiantes;
 import javax.swing.JOptionPane;
 
 public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
-    
+
     public ViewFormularioAlumnos() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -195,13 +195,12 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegistrarActionPerformed
-        
+
         Integer legajo = Integer.parseInt(jtLegajo.getText());
         String nombre = jtNombre.getText();
         String apellido = jtApellido.getText();
-        
-        Alumno estudiante = new Alumno(legajo, nombre, apellido);
-        
+        Alumno estudiante = new Alumno(legajo, apellido, nombre);
+
         if (!estudiantes.containsKey(estudiante.getLegajo())) {
             ViewColegio.estudiantes.put(legajo, estudiante);
             JOptionPane.showMessageDialog(this, "Alumno Agregado");
@@ -214,7 +213,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "El Alumno ya se encuentra Registrado");
             jlNuevoLegajo.setText("Legajo existente, ingrese otro");
         }
-        
+
 
     }//GEN-LAST:event_jbRegistrarActionPerformed
 
@@ -226,7 +225,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
         jlEstado.setText("Alumno Nuevo");
         jlEstado.setForeground(new java.awt.Color(153, 0, 0));
         jbNuevo.setEnabled(false);
-       
+
     }//GEN-LAST:event_jbNuevoActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
@@ -240,7 +239,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtLegajoFocusGained
 
     private void jtLegajoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtLegajoFocusLost
-        
+
         if (jtLegajo.getText().equals("")) {
             jtLegajo.setText("LEGAJO:");
         }
@@ -258,7 +257,7 @@ public class ViewFormularioAlumnos extends javax.swing.JInternalFrame {
 //          JOptionPane.showMessageDialog(this, "Por favor ingrese un Valor Numerico para el Telefono", "DATO INCORRECTO", WIDTH, iconoNumeroTelefonico);
             JOptionPane.showMessageDialog(this, "Por favor ingrese un Valor Numerico para el Legajo");
             jtLegajo.setText("");
-            
+
         }
 
     }//GEN-LAST:event_jtLegajoActionPerformed

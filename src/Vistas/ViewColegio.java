@@ -7,14 +7,21 @@ import java.util.Map;
 
 public class ViewColegio extends javax.swing.JFrame {
 
+    public static Map<Integer, Alumno> estudiantes = new HashMap();
+    public static Map<Integer, Materia> materias = new HashMap();
+    public static Map<Integer, Alumno> misEstudiantes = new HashMap();
+    public static Map<Integer, Materia> misMaterias = new HashMap();
 
-    public static Map<Integer,Alumno> estudiantes = new HashMap();
-    public static Map<Integer,Materia> materias = new HashMap();
-    
-    
-    
     public ViewColegio() {
         initComponents();
+        estudiantes.put(55, new Alumno(55, "Quito", "Esteban"));
+        estudiantes.put(59, new Alumno(59, "Rico", "Pepe"));
+        estudiantes.put(65, new Alumno(65, "Leria", "Cingu"));
+        estudiantes.put(34, new Alumno(34, "Perez", "Sofia"));
+        materias.put(29, new Materia(29, "Filosofia", 3));
+        materias.put(10, new Materia(10, "Fisica", 2));
+        materias.put(15, new Materia(15, "Quimica", 1));
+
     }
 
     @SuppressWarnings("unchecked")
@@ -231,7 +238,7 @@ public class ViewColegio extends javax.swing.JFrame {
         ViewFormularioAlumnos alumnos = new ViewFormularioAlumnos();
         jEscritorio.add(alumnos);
         alumnos.setVisible(true);
-     
+
     }//GEN-LAST:event_jmFormularioAlumnosActionPerformed
 
     private void jMRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMRegistrosActionPerformed
@@ -239,11 +246,11 @@ public class ViewColegio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMRegistrosActionPerformed
 
     private void jmFormularioInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormularioInscripcionesActionPerformed
-       jEscritorio.removeAll();
-       jEscritorio.repaint();
-       ViewFormularioInscripciones inscripcion = new ViewFormularioInscripciones();
-       jEscritorio.add(inscripcion);
-       inscripcion.setVisible(true); // TODO add your handling code here:
+        jEscritorio.removeAll();
+        jEscritorio.repaint();
+        ViewFormularioInscripciones inscripcion = new ViewFormularioInscripciones();
+        jEscritorio.add(inscripcion);
+        inscripcion.setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_jmFormularioInscripcionesActionPerformed
 
     private void jmSalirDelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirDelRegistroActionPerformed
@@ -251,11 +258,11 @@ public class ViewColegio extends javax.swing.JFrame {
     }//GEN-LAST:event_jmSalirDelRegistroActionPerformed
 
     private void jmFormularioMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormularioMateriasActionPerformed
-       jEscritorio.removeAll();
-       jEscritorio.repaint();
-       ViewFormularioMaterias matt = new ViewFormularioMaterias();
-       jEscritorio.add(matt);
-       matt.setVisible(true);
+        jEscritorio.removeAll();
+        jEscritorio.repaint();
+        ViewFormularioMaterias matt = new ViewFormularioMaterias();
+        jEscritorio.add(matt);
+        matt.setVisible(true);
     }//GEN-LAST:event_jmFormularioMateriasActionPerformed
 
     /**
