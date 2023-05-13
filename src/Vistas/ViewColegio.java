@@ -1,5 +1,10 @@
 package Vistas;
 
+//              GRUPO 9
+//INTEGRANTES : Pablo Nicolas Peñaloza
+//              Alex Gustavo Astudillo Duran
+//              Gabriel Ezequiel Becerra Diaz
+
 import Inscripciones.Alumno;
 import Inscripciones.Materia;
 import java.util.HashMap;

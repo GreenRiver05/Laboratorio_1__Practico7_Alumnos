@@ -48,6 +48,8 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
 
     public void llenarComboBox3Inscripciones(Alumno alumno) {
         jcbMateriasAlumnos.removeAllItems();
+        jcbMateriasAlumnos.addItem("MATERIAS");
+        jcbMateriasAlumnos.addItem("");
         for (Map.Entry<Integer, Materia> matt : alumno.getMaterias().entrySet()) {
             String valor = matt.getValue().getNombre();
             valor += " de " + matt.getValue().getAnio() + "° año ";
@@ -131,11 +133,6 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
         jtNumero.setEditable(false);
         jtNumero.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jtNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtNumero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtNumeroActionPerformed(evt);
-            }
-        });
 
         jlEstudiante.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jlEstudiante.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -214,7 +211,10 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
 
                     if (m.getKey() == claveMateria) {
                         inscripto = a.getValue().agregarMateria(m.getValue());
-
+                        Alumno alum = a.getValue();
+                        llenarComboBox3Inscripciones(alum);
+                        int numeroMaterias = a.getValue().cantidadMaterias();
+                        jtNumero.setText(numeroMaterias + "");
                         if (inscripto) {
                             JOptionPane.showMessageDialog(this, "Inscripto");
                             System.out.println("\n___________________________________________________________________________");
@@ -250,6 +250,8 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
                 jlNombre.setText(datos);
                 Alumno alum = a.getValue();
                 llenarComboBox3Inscripciones(alum);
+                int numeroMaterias = a.getValue().cantidadMaterias();
+                jtNumero.setText(numeroMaterias + "");
             }
         }
         if (claveAlumno == 0 || claveAlumno == 1) {
@@ -261,10 +263,6 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
     private void jcbMateriasAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriasAlumnosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbMateriasAlumnosActionPerformed
-
-    private void jtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNumeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtNumeroActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

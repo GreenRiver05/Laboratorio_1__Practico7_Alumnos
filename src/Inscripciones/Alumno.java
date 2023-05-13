@@ -44,21 +44,21 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public boolean agregarMateria(Materia m) {
-        boolean agregado = false;
-        if (!materias.containsKey(m.getIdMateria())) {
-            materias.put(m.getIdMateria(), m);
-            agregado = true;
-        } 
-        return agregado;
-    }
-
     public Map<Integer, Materia> getMaterias() {
         return materias;
     }
 
     public void setMaterias(Map<Integer, Materia> materias) {
         this.materias = materias;
+    }
+
+    public boolean agregarMateria(Materia m) {
+        boolean agregado = false;
+        if (!materias.containsKey(m.getIdMateria())) {
+            materias.put(m.getIdMateria(), m);
+            agregado = true;
+        }
+        return agregado;
     }
 
     public int cantidadMaterias() {
