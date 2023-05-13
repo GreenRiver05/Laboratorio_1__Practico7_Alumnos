@@ -28,6 +28,7 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
                     + "    Apellido: " + b.getValue().getApellido() + "   Legajo: " + b.getValue().getLegajo());
         }
     }
+
     public void llenarComboBox2YMapa() {
         int aux = 2;
         for (Map.Entry<Integer, Materia> matt : materias.entrySet()) {
@@ -44,7 +45,9 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
                     + "    Anio: " + b.getValue().getAnio() + "   Codigo: " + b.getValue().getIdMateria());
         }
     }
+
     public void llenarComboBox3Inscripciones(Alumno alumno) {
+        jcbMateriasAlumnos.removeAllItems();
         for (Map.Entry<Integer, Materia> matt : alumno.getMaterias().entrySet()) {
             String valor = matt.getValue().getNombre();
             valor += " de " + matt.getValue().getAnio() + "° año ";
@@ -202,7 +205,7 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
         int claveAlumno = jcbAlumnos.getSelectedIndex();
         int claveMateria = jcbMaterias.getSelectedIndex();
-        boolean inscripto= false;
+        boolean inscripto = false;
         for (Map.Entry<Integer, Alumno> a : misEstudiantes.entrySet()) {
 
             if (a.getKey() == claveAlumno) {
@@ -210,21 +213,27 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
                 for (Map.Entry<Integer, Materia> m : misMaterias.entrySet()) {
 
                     if (m.getKey() == claveMateria) {
-                        inscripto= a.getValue().agregarMateria(m.getValue());
-                    }
-                    if(inscripto){
-                        JOptionPane.showMessageDialog(this, "Inscripto");
-                    }else{
-                        JOptionPane.showMessageDialog(this, "Ya se encuentra Inscripto");
+                        inscripto = a.getValue().agregarMateria(m.getValue());
+
+                        if (inscripto) {
+                            JOptionPane.showMessageDialog(this, "Inscripto");
+                            System.out.println("\n___________________________________________________________________________");
+                            System.out.println("\nESTUDIANTE : " + a.getValue().getNombre());
+                            for (Map.Entry<Integer, Materia> b : a.getValue().getMaterias().entrySet()) {
+
+                                System.out.println("\nClave: " + b.getKey() + "     Nombre: " + b.getValue().getNombre()
+                                        + "    Anio: " + b.getValue().getAnio() + "   Codigo: " + b.getValue().getIdMateria());
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Ya se encuentra Inscripto");
+                        }
                     }
                 }
-            }
-            for (Map.Entry<Integer,Materia > b : a.getValue().getMaterias().entrySet()) {
-                System.out.println("\nClave: " + b.getKey() + "     Nombre: " + b.getValue().getNombre()
-                        + "    Anio: " + b.getValue().getAnio() + "   Codigo: " + b.getValue().getIdMateria());
+
             }
         }
-        System.out.println("___________________________________________________________________________");
+
+
     }//GEN-LAST:event_jbInscribirActionPerformed
 
     private void jSalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalir3ActionPerformed
@@ -233,18 +242,17 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
 
     private void jcbAlumnosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbAlumnosItemStateChanged
         int claveAlumno = jcbAlumnos.getSelectedIndex();
-        Alumno alum = null;
         for (Map.Entry<Integer, Alumno> a : misEstudiantes.entrySet()) {
             if (a.getKey() == claveAlumno) {
                 String datos = a.getValue().getNombre() + " " + a.getValue().getApellido();
                 datos = datos.toUpperCase();
                 jlEstudiante.setText("ESTUDIANTE:");
                 jlNombre.setText(datos);
-                alum = a.getValue();
+                Alumno alum = a.getValue();
                 llenarComboBox3Inscripciones(alum);
             }
         }
-        if(claveAlumno == 0 || claveAlumno == 1){
+        if (claveAlumno == 0 || claveAlumno == 1) {
             jlNombre.setText("");
             jlEstudiante.setText("");
         }

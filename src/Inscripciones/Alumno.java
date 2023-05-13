@@ -49,10 +49,7 @@ public class Alumno {
         if (!materias.containsKey(m.getIdMateria())) {
             materias.put(m.getIdMateria(), m);
             agregado = true;
-        } else {
-            materias.put(m.getIdMateria(), m);
-            agregado = true;
-        }
+        } 
         return agregado;
     }
 
