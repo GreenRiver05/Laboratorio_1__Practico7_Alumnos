@@ -23,7 +23,7 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
             misEstudiantes.put(aux, a.getValue());  //llenamos otro mapa para guardar los valores de los alumnos
             aux++;
         }
-        
+
         for (Map.Entry<Integer, Alumno> b : misEstudiantes.entrySet()) {
             System.out.println("\nClave: " + b.getKey() + "     Nombre: " + b.getValue().getNombre()
                     + "    Apellido: " + b.getValue().getApellido() + "   Legajo: " + b.getValue().getLegajo());
@@ -256,7 +256,6 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
                 for (Map.Entry<Integer, Materia> m : misMaterias.entrySet()) {
 
                     if (m.getKey() == claveMateria) {
-                        a.getValue().agregarMateria(m.getValue());
                         inscripto = a.getValue().agregarMateria(m.getValue());
                         Alumno alum = a.getValue();
 
@@ -265,7 +264,7 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
                         jtNumero.setText(numeroMaterias + "");
                         if (inscripto) {
                             JOptionPane.showMessageDialog(this, "Inscripto");
-                           
+
                         } else {
                             JOptionPane.showMessageDialog(this, "Ya se encuentra Inscripto");
                         }
