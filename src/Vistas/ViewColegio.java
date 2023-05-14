@@ -14,18 +14,24 @@ public class ViewColegio extends javax.swing.JFrame {
 
     public static Map<Integer, Alumno> estudiantes = new HashMap();
     public static Map<Integer, Materia> materias = new HashMap();
+    
+    
     public static Map<Integer, Alumno> misEstudiantes = new HashMap();
     public static Map<Integer, Materia> misMaterias = new HashMap();
 
     public ViewColegio() {
         initComponents();
-        estudiantes.put(55, new Alumno(55, "Quito", "Esteban"));
-        estudiantes.put(59, new Alumno(59, "Rico", "Pepe"));
-        estudiantes.put(65, new Alumno(65, "Leria", "Cingu"));
-        estudiantes.put(34, new Alumno(34, "Perez", "Sofia"));
-        materias.put(29, new Materia(29, "Filosofia", 3));
-        materias.put(10, new Materia(10, "Fisica", 2));
-        materias.put(15, new Materia(15, "Quimica", 1));
+        estudiantes.put(899, new Alumno(899, "Quito", "Esteban"));
+        estudiantes.put(1035, new Alumno(1035, "Rico", "Pepe"));
+        estudiantes.put(1065, new Alumno(1065, "Leria", "Cingu"));
+        estudiantes.put(985, new Alumno(985, "Perez", "Sofia"));
+        estudiantes.put(1001, new Alumno(1001, "López", "Martin"));
+        estudiantes.put(1002, new Alumno(1002, "Martínez", "Brenda"));
+        materias.put(5, new Materia(5, "EDA", 1));
+        materias.put(6, new Materia(6, "WEB", 2));
+        materias.put(1, new Materia(1, "Ingles", 1));
+        materias.put(2, new Materia(2, "Matemáticas", 1));
+        materias.put(3, new Materia(3, "Laboratorio", 1));
 
     }
 
