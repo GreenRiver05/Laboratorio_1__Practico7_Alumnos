@@ -41,10 +41,10 @@ public class ViewFormularioInscripciones extends javax.swing.JInternalFrame {
             misMaterias.put(aux, matt.getValue());   //llenamos otro mapa para guardar los valores de las materias
             aux++;
         }
-        for (Map.Entry<Integer, Materia> b : misMaterias.entrySet()) {
-            System.out.println("\nClave: " + b.getKey() + "     Nombre: " + b.getValue().getNombre()
-                    + "    Anio: " + b.getValue().getAnio() + "   Codigo: " + b.getValue().getIdMateria());
-        }
+//        for (Map.Entry<Integer, Materia> b : misMaterias.entrySet()) {
+//            System.out.println("\nClave: " + b.getKey() + "     Nombre: " + b.getValue().getNombre()
+//                    + "    Anio: " + b.getValue().getAnio() + "   Codigo: " + b.getValue().getIdMateria());
+//        }
     }
 
     public void llenarComboBox3Inscripciones(Alumno alumno) {
